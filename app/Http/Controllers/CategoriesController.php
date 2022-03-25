@@ -5,12 +5,34 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Category;
+use App\Models\Soft;
 
 class CategoriesController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
+
+        // $softs = Soft::all();
+        // dd($softs);
+        // dd($softs->category);
+        // dd($softs->category->name);
+
+
+        // relations dans les vues connue : 
+        // 2 requetes SQL
+        // 1 => select * from softs
+        // 2 => select * from categories WHERE id IN [1, 2, 3, 4, 5]
+        // $softs = Soft::with('category')->get();
+        // dd($softs[0]);
+
+        // relation inverse
+        // $categories = Category::with('softs')->get();
+
+        // dd($categories);
+
+
+
+        $categories = Category::with('softs')->get();
 
         return view("categories.index", compact('categories'));
     }

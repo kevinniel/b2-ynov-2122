@@ -25,6 +25,7 @@
                 <th>created_at</th>
                 <th>updated_at</th>
                 <th>actions</th>
+                <th>Softs</th>
             </tr>
         </thead>
         <tbody>
@@ -44,6 +45,16 @@
                                 <input type="hidden" name="category_id" value="{{ $category->id }}">
                                 <button type="submit">Supprimer</button>
                             </form>
+                        </td>
+                        <td>
+                            @if(count($category->softs) > 0)
+                                @foreach($category->softs as $soft)
+                                    {{-- <a href="route('url', $soft->id)"></a> --}}
+                                    {{ $soft->name }}
+                                @endforeach
+                            @else
+                                aucun soft
+                            @endif
                         </td>
                     </tr>
                 @endforeach
