@@ -47,6 +47,7 @@ Les temps 1, 2 et 3 sont à gérer en mode "backoffice", c'est-à-dire, ajoutabl
 
 #### Temps 5
 - présentation propre de tous les cocktails en front (partie visible sans connexion)
+- tous les formulaires qui auront été réalisés auparavant ne devront être accessible qu'une fois authentifié
 
 <!-- - tables
 - commandes -->
